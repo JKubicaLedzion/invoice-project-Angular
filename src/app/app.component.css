@@ -1,0 +1,19 @@
+h1 {
+    font-family: Arial, Helvetica, serif;
+    color:  #5c5c8a;
+    border-style: double;
+}
+
+p {
+    font-style: bold;
+}
+button {
+    background-color: #99ccff; /* Green */
+    border: 2x solid black;
+    padding: 10px 24px;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+}

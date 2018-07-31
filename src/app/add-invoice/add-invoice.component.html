@@ -1,0 +1,135 @@
+<div class="container-fluid">
+  <br/>
+  <h3>Provide invoice details:</h3>
+  <p>Issue date:
+    <input id="this.invoice.issueDate" type="text" required [(ngModel)]="this.invoice.issueDate"
+           name="this.invoice.issueDate"/>
+  </p>
+  <p>Due date:
+    <input id="this.invoice.dueDate" type="text" required [(ngModel)]="this.invoice.dueDate"
+           name="this.invoice.dueDate"/>
+  </p>
+
+
+  <h3>Provide seller details:</h3>
+  <p>Name:
+    <input id="this.invoice.supplier.name" type="text" required [(ngModel)]="this.invoice.supplier.name"
+           name="this.invoice.supplier.name"/>
+  </p>
+  <p>VAT id:
+    <input id="this.invoice.supplier.vatNumber" type="text" required
+           [(ngModel)]="this.invoice.supplier.vatNumber"
+           name="this.invoice.supplier.vatNumber"/>
+  </p>
+  <p>Phone number:
+    <input id="this.invoice.supplier.phoneNumber" type="text" required [(ngModel)]="this.invoice.supplier.phoneNumber"
+           name="this.invoice.supplier.phoneNumber"/>
+  </p>
+  <p>Bank account:
+    <input id="this.invoice.supplier.bankAccount" type="text" required [(ngModel)]="this.invoice.supplier.bankAccount"
+           name="this.invoice.supplier.bankAccount"/>
+  </p>
+  <p>City:
+    <input id="this.invoice.supplier.address.city" type="text" required [(ngModel)]="this.invoice.supplier.address.city"
+           name="this.invoice.supplier.address.city"/>
+  </p>
+  <p>Postal code:
+    <input id="this.invoice.supplier.address.postalCode" type="text" required
+           [(ngModel)]="this.invoice.supplier.address.postalCode"
+           name="this.invoice.supplier.address.postalCode"/>
+  </p>
+  <p>Coutry:
+    <input id="this.invoice.supplier.address.country" type="text" required
+           [(ngModel)]="this.invoice.supplier.address.country"
+           name="this.invoice.supplier.address.country"/>
+  </p>
+  <p>Street:
+    <input id="this.invoice.supplier.address.street" type="text" required
+           [(ngModel)]="this.invoice.supplier.address.street"
+           name="this.invoice.supplier.address.street"/>
+  </p>
+
+  <h3>Provide buyer details:</h3>
+  <p>Name:
+    <input id="this.invoice.customer.name" type="text" required [(ngModel)]="this.invoice.customer.name"
+           name="this.invoice.customer.name"/>
+  </p>
+  <p>VAT id:
+    <input id="this.invoice.customer.vatNumber" type="text" required
+           [(ngModel)]="this.invoice.customer.vatNumber"
+           name="this.invoice.customer.vatNumber"/>
+  </p>
+  <p>Phone number:
+    <input id="this.invoice.customer.phoneNumber" type="text" required [(ngModel)]="this.invoice.customer.phoneNumber"
+           name="this.invoice.customer.phoneNumber"/>
+  </p>
+  <p>Bank account:
+    <input id="this.invoice.customer.bankAccount" type="text" required [(ngModel)]="this.invoice.customer.bankAccount"
+           name="this.invoice.customer.bankAccount"/>
+  </p>
+  <p>City:
+    <input id="this.invoice.customer.address.city" type="text" required [(ngModel)]="this.invoice.customer.address.city"
+           name="this.invoice.customer.address.city"/>
+  </p>
+  <p>Postal code:
+    <input id="this.invoice.customer.address.postalCode" type="text" required
+           [(ngModel)]="this.invoice.customer.address.postalCode"
+           name="this.invoice.customer.address.postalCode"/>
+  </p>
+  <p>Coutry:
+    <input id="this.invoice.customer.address.country" type="text" required
+           [(ngModel)]="this.invoice.customer.address.country"
+           name="this.invoice.customer.address.country"/>
+  </p>
+  <p>Street:
+    <input id="this.invoice.customer.address.street" type="text" required
+           [(ngModel)]="this.invoice.customer.address.street"
+           name="this.invoice.customer.address.street"/>
+  </p>
+
+  <h3>Provide entry details:</h3>
+  <p>Description:
+    <input id="this.invoiceEntry.description" type="text" required
+           [(ngModel)]="this.invoiceEntry.description"
+           name="this.invoiceEntry.description"/>
+  </p>
+  <p>Unit price:
+    <input id="this.invoiceEntry.unitPrice" type="text" required
+           [(ngModel)]="this.invoiceEntry.unitPrice"
+           name="this.invoiceEntry.unitPrice"/>
+  </p>
+  <p>Quantity:
+    <input id="this.invoiceEntry.quantity" type="text" required
+           [(ngModel)]="this.invoiceEntry.quantity"
+           name="this.invoiceEntry.quantity"/>
+  </p>
+  <p>VAT rate:
+    <input id="this.invoiceEntry.vatRate" type="text" required
+           [(ngModel)]="this.invoiceEntry.vatRate"
+           name="this.invoiceEntry.vatRate"/>
+  </p>
+  <br/>
+  <button (click)="addInvoiceEntry(this.invoice, this.invoiceEntry)">Add invoice entry</button>
+  <br/>
+  <br/>
+
+  <table>
+    <tr>
+      <th>Description</th>
+      <th>Quantity</th>
+      <th>Unit price</th>
+      <th>VAT</th>
+    </tr>
+    <tr *ngFor="let ie of invoiceEntryAdded">
+      <td>{{ie.description}}</td>
+      <td>{{ie.quantity}}</td>
+      <td>{{ie.unitPrice}}</td>
+      <td>{{ie.vatRate}}</td>
+    </tr>
+  </table>
+
+  <br/>
+  <br/>
+  <button (click)="addInvoice(this.invoice, this.invoiceEntry)">Submit</button>
+  <br/>
+</div>

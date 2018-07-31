@@ -1,0 +1,42 @@
+<div class="container-fluid">
+  <br/>
+  <p>Id:</p>
+  <input id="this.id" type="number" required [(ngModel)]="this.id" name="this.id"/>
+  <br/>
+  <button (click)="getInvoiceDetails(this.id)">Show details</button>
+  <br/>
+  <br/>
+  <h3>Invoice details:</h3>
+  <p>Invoice Id: {{invoice.id}}<br/>
+    Issue date: {{invoice.issueDate}}<br/>
+    Due date: {{invoice.dueDate}}<br/>
+    Is paid: {{invoice.paid}}<br/></p>
+  <h3>Seller details:</h3>
+  <p>Company name: {{invoice.supplier.name}}<br/>
+    Bank account: {{invoice.supplier.bankAccount}}<br/>
+    Phone number: {{invoice.supplier.phoneNumber}}<br/>
+    Company VAT id: {{invoice.supplier.vatIdentificationNumber}}<br/>
+    Company address:<br/>
+    {{invoice.supplier.address.street}}<br/>
+    {{invoice.supplier.address.city}}<br/>
+    {{invoice.supplier.address.postalCode}}<br/>
+    {{invoice.supplier.address.country}}<br/>
+  </p>
+  <h3>Buyer details:</h3>
+  <p>Company name: {{invoice.customer.name}}<br/>
+    Bank account: {{invoice.customer.bankAccount}}<br/>
+    Phone number: {{invoice.customer.phoneNumber}}<br/>
+    Company VAT id: {{invoice.customer.vatIdentificationNumber}}<br/>
+    Company address:<br/>
+    {{invoice.customer.address.street}}<br/>
+    {{invoice.customer.address.city}}<br/>
+    {{invoice.customer.address.postalCode}}<br/>
+    {{invoice.customer.address.country}}<br/>
+  </p>
+  <h3>Invoice entries details:</h3>
+  <p>Description: {{invoice.entryList.invoiceEntry.description}}<br/>
+    Unit price: {{invoice.entryList.invoiceEntry.unitPrice}}<br/>
+    Quantity: {{invoice.entryList.invoiceEntry.quantity}}<br/>
+    VAT rate: {{invoice.entryList.invoiceEntry.vatRate}}<br/>
+  </p>
+</div>
